@@ -1,0 +1,42 @@
+[package]
+name = "msrcget"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "msrcget"
+keywords = []
+categories = []
+
+[features]
+default = []
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
+[dependencies]
+compio = { version = "0.19.2", features = ["fs", "net", "io", "time", "macros", "rustls", "ring"] }
+futures-util = "0.3.34"
+gxhash = "3.5.0"
+httparse = "1.10.1"
+itoa = "1.0.19"
+log = "0.4.34"
+memchr = "2.8.3"
+thiserror = "2.0.20"
+url = "2.5.8"
+webpki-roots = "1.0.12"
+
+[dev-dependencies]
+aok = "0.1.18"
+crc32fast = "1.5.5"
+cyper = { version = "0.9.0", default-features = false, features = ["rustls", "stream"] }
+down = "0.1.5"
+log = "0.4.34"
+log_init = "0.1.39"
+reqwest = { version = "0.13.5", default-features = false, features = ["rustls", "stream"] }
+static_init = "1.0.4"
+tempfile = "3.27.0"
+tokio = { version = "1.54.1", features = ["rt-multi-thread", "macros", "fs", "io-util", "net", "time", "sync"] }
+ureq = { version = "3.5.2", default-features = false, features = ["rustls"] }
+
